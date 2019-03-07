@@ -38,6 +38,7 @@ public class ProductoCentral {
                 X0=X1;
                 X1=n;
                 System.out.println(num);
+                numeros[i]=n;
             }
             else{
                 while(num.length()<8){
@@ -49,7 +50,9 @@ public class ProductoCentral {
                 X0=X1;
                 X1=n;
                 System.out.println(num);
+                numeros[i]=n;
             }
+
         }
 
     }
