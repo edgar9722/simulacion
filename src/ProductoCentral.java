@@ -21,6 +21,7 @@ public class ProductoCentral {
     }
 
     public void Calcular(int cant_numeros){
+        numeros = new int[cant_numeros];
         Scanner reader = new Scanner(System.in);
         String cont = "0";
 

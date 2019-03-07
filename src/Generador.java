@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Generador {
@@ -108,7 +109,12 @@ public class Generador {
                 archivos.setNombre("multiplicativo");
             }break;
         }
-        archivos.guardar();
+        try {
+            archivos.guardarArchivo();
+        }catch (IOException e){
+            System.out.println(e);
+        }
+
     }
 
     private void mostrarNumeros(){
