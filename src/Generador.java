@@ -29,7 +29,6 @@ public class Generador {
         Scanner t = new Scanner (System.in);
         boolean bandera1 = false;
         int opc;
-        do{
         switch (opcion){
             case 0: {
                 Automatico automatico = new Automatico(cant_numeros);
@@ -80,8 +79,8 @@ public class Generador {
                     "-> ");
         opc = t.nextInt();
         if(opc == 1)
-            bandera1 = true;
-        }while (!bandera1);
+            menu();
+        else System.exit(0);
     }
     private void guardarNumeros(){
         Archivos archivos = new Archivos();
