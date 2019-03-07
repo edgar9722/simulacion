@@ -22,7 +22,7 @@ public class Cuadrados_Centrales {
             String cuadrado = Integer.toString((int) Math.pow(this.semilla, 2));
             do {
                 int ceros = 8 - cuadrado.length();
-                for (int i = 0; i <= ceros; i++) {
+                for (int j = 0; j <= ceros; j++) {
                     cuadrado = "0" + cuadrado;
 
                 }
