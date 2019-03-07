@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ProductoCentral {
     int Semilla1;
     int Semilla2;
@@ -15,23 +17,40 @@ public class ProductoCentral {
         this.numeros = numeros;
     }
 
-    public void Calcular(int S1, int S2, int Num){
-        Semilla1 = S1;
-        Semilla2 = S2;
+    public void Calcular(){
+        Scanner reader = new Scanner(System.in);
+        String cont = "0";
+
+        System.out.println("Ingresa las semilla1: ");
+        Semilla1 = reader.nextInt();
+        System.out.println("Ingresa las semilla2: ");
+        Semilla2 = reader.nextInt();
         X0=Semilla1;
         X1=Semilla2;
-        for(int i = 0; i <= Num; i++){
+
+        for(int i = 0; i <= 100; i++){
             aux = X0 * X1;
             String num = Integer.toString(aux);
+            //System.out.println(aux);
             if(num.length()==8){
-                String subnum = num.substring(2,5);
+                String subnum = num.substring(2,6);
                 num = subnum;
                 Integer n = Integer.parseInt(num);
                 X0=X1;
                 X1=n;
-                System.out.println(n);
+                System.out.println(num);
             }
-
+            else{
+                while(num.length()<8){
+                    num = cont + num;
+                }
+                String subnum = num.substring(2,6);
+                num = subnum;
+                Integer n = Integer.parseInt(num);
+                X0=X1;
+                X1=n;
+                System.out.println(num);
+            }
         }
 
     }
