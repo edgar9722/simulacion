@@ -17,7 +17,7 @@ public class ProductoCentral {
         this.numeros = numeros;
     }
 
-    public void Calcular(){
+    public void Calcular(int cant_numeros){
         Scanner reader = new Scanner(System.in);
         String cont = "0";
 
@@ -28,10 +28,9 @@ public class ProductoCentral {
         X0=Semilla1;
         X1=Semilla2;
 
-        for(int i = 0; i <= 100; i++){
+        for(int i = 0; i <= cant_numeros; i++){
             aux = X0 * X1;
             String num = Integer.toString(aux);
-            //System.out.println(aux);
             if(num.length()==8){
                 String subnum = num.substring(2,6);
                 num = subnum;
