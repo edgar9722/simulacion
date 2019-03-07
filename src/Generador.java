@@ -29,8 +29,6 @@ public class Generador {
         Scanner t = new Scanner (System.in);
         boolean bandera1 = false;
         int opc;
-
-
         do{
         switch (opcion){
             case 0: {
@@ -88,6 +86,4 @@ public class Generador {
             System.out.println(numeros[i]);
         }
     }
-
-
 }
