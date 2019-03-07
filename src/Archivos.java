@@ -19,9 +19,8 @@ public class Archivos {
     }
 
     public void guardar() {
-        fecha = new Date();
-        DateFormat hourdateFormat = new SimpleDateFormat("ddMMyyyy-HHmmss");
-        nombre = nombre+"-"+hourdateFormat.format(fecha);
+        FileOutputStream file = null;
+        DataOutputStream salida = null;
         try {
             file = new FileOutputStream("SalidaNumeros/"+nombre+".dat");
             salida = new DataOutputStream(file);

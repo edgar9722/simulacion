@@ -26,6 +26,12 @@ public class Generador {
         llamarFuncion();
     }
     private void llamarFuncion(){
+        Scanner t = new Scanner (System.in);
+        boolean bandera1 = false;
+        int opc;
+
+
+        do{
         switch (opcion){
             case 0: {
                 Automatico automatico = new Automatico(cant_numeros);
@@ -64,6 +70,18 @@ public class Generador {
                 System.out.println("Opcion no valida");
             }
         }
+        mostrarNumeros();
+        Archivos archivos = new Archivos();
+        archivos.setNumeros(numeros);
+        archivos.guardar();
+        System.out.println("------------------------------------\n" +
+                    "1 Regresar al menu\n" +
+                    "Otro Salir" +
+                    "-> ");
+        opc = t.nextInt();
+        if(opc == 1)
+            bandera1 = true;
+        }while (!bandera1);
     }
     private void mostrarNumeros(){
         for(int i = 0; i < numeros.length; i++){
