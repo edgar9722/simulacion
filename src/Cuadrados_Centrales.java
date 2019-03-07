@@ -10,6 +10,7 @@ public class Cuadrados_Centrales {
     public Cuadrados_Centrales(int cantidad) {
         this.cantidad = cantidad;
     }
+
     public void pedirDatos(){
         System.out.println("ingrese la semilla");
         semilla = t.nextInt();    }
