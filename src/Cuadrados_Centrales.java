@@ -8,7 +8,9 @@ public class Cuadrados_Centrales {
         this.x = x;
         this.aux = aux;
         this.numeeros = numeeros;
-
+        for (int i = 0; i < = x  ; i++) {
+            numeeros[i] = generar(this.semilla);
+        }
 
     }
 
@@ -49,20 +51,20 @@ public class Cuadrados_Centrales {
     }
 
     public int generar(int semilla) {
-        ;
 
-        int c;
+
+
         String cuadrado = Integer.toString((int)Math.pow(semilla,2));
         do {
-            int ceros = 7 - cuadrado.length();
+            int ceros = 8 - cuadrado.length();
             for (int i = 0; i <= ceros; i++) {
                 cuadrado = "0" + cuadrado;
 
             }
-        } while (cuadrado.length() < 7);
+        } while (cuadrado.length() < 8);
         this.semilla = Integer.parseInt(cuadrado.substring(5, 7));
 
-        return semilla;
+        return this.semilla;
     }
 
 }
