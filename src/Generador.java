@@ -61,10 +61,10 @@ public class Generador {
                 numeros = aditivo.getNumeros();
             }break;
             case 5: {
-                Mixto mixto = new Mixto(cant_numeros);
-                mixto.pedirDatos();
-                mixto.generarNumeros();
-                numeros = mixto.getNumeros();
+                 Mixto mixto = new Mixto(cant_numeros);
+                 mixto.pedirDatos();
+                 mixto.generarNumeros();
+                 numeros=mixto.getNumeros();
 
 
             }break;

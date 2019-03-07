@@ -6,4 +6,5 @@ public class Main {
         Generador generador_numeros = new Generador();
 
     }
+
 }
