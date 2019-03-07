@@ -17,6 +17,9 @@ public class ProductoCentral {
         this.numeros = numeros;
     }
 
+    public ProductoCentral() {
+    }
+
     public void Calcular(int cant_numeros){
         Scanner reader = new Scanner(System.in);
         String cont = "0";
