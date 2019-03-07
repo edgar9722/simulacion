@@ -1,7 +1,4 @@
-import java.io.DataOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,29 +11,28 @@ public class Archivos {
     private String nombre;
     private String direccion;
 
-    public Archivos() {
-
-    }
-
-    public void guardar() {
-        FileOutputStream file = null;
-        DataOutputStream salida = null;
+    public void guardarArchivo()throws IOException{
         fecha = new Date();
         DateFormat hourdateFormat = new SimpleDateFormat("-HHmmss");
-        nombre = nombre+"-"+hourdateFormat.format(fecha);
-        try {
-            file = new FileOutputStream("SalidaNumeros/"+nombre+".dat");
-            salida = new DataOutputStream(file);
-            for (int i = 0; i < numeros.length; i++) {
-                salida.writeInt(numeros[i]);
-            }
-            file.close();
-            salida.close();
-        } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
+        nombre = nombre+"-"+hourdateFormat.format(fecha); // Renombrar el nombre de salida
+
+        FileWriter archivo = new FileWriter(nombre+".dat");
+        PrintWriter arch = new PrintWriter(archivo);
+        for (int i = 0; i < numeros.length; i++)
+        arch.write(numeros[i]);
+        // Cerrar el archivo
+        arch.close();
+    }
+    public void leerArchivo(String nombre, int cantidad)throws IOException{
+        int[] num = new int[cantidad];
+        //
+        FileReader archivo = new FileReader(nombre);
+        BufferedReader arch = new BufferedReader(archivo);
+        for (int i = 0; i < cantidad; i++) {
+            num[i] = Integer.parseInt(arch.readLine());
+            System.out.println(num[i]);
         }
+        arch.close();
     }
 
     public int[] getNumeros() {
