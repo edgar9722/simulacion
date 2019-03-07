@@ -37,7 +37,10 @@ public class Generador {
                 numeros = automatico.getNumeros();
             }break;
             case 1: {
-                //Cuadrados_Centrales cuadrados_centrales = new Cuadrados_Centrales(cant_numeros);
+                Cuadrados_Centrales cuadrados_centrales = new Cuadrados_Centrales(cant_numeros);
+                cuadrados_centrales.pedirDatos();
+                cuadrados_centrales.calcular();
+                numeros = cuadrados_centrales.getNumeros();
 
 
             }break;
@@ -59,6 +62,7 @@ public class Generador {
                 numeros = aditivo.getNumeros();
             }break;
             case 5: {
+
 
             }break;
             case 6: {

@@ -1,70 +1,39 @@
+import java.util.Scanner;
+
+
 public class Cuadrados_Centrales {
-    int semilla;
-    int x, aux;
-    int[] numeeros;
+ int semilla ;
+ int[] numeros;
+ int cantidad;
+    Scanner t = new Scanner (System.in);
 
-    public Cuadrados_Centrales(int semilla, int x, int aux, int[] numeeros) {
-        this.semilla = semilla;
-        this.x = x;
-        this.aux = aux;
-        this.numeeros = numeeros;
-        for (int i = 0; i < = x  ; i++) {
-            numeeros[i] = generar(this.semilla);
+    public Cuadrados_Centrales(int cantidad) {
+        this.cantidad = cantidad;
+    }
+    public void pedirDatos(){
+        System.out.println("ingrese la semilla");
+        semilla = t.nextInt();    }
+
+    public void  calcular() {
+
+        for (int i = 0; i <= this.cantidad; i++) {
+
+
+            String cuadrado = Integer.toString((int) Math.pow(this.semilla, 2));
+            do {
+                int ceros = 8 - cuadrado.length();
+                for (int i = 0; i <= ceros; i++) {
+                    cuadrado = "0" + cuadrado;
+
+                }
+            } while (cuadrado.length() < 8);
+            this.semilla = Integer.parseInt(cuadrado.substring(5, 7));
+            numeros[i] = this.semilla;
         }
-
     }
 
-    public int getSemilla() {
-        return semilla;
-    }
-
-    public void setSemilla(int semilla) {
-        this.semilla = semilla;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getAux() {
-        return aux;
-    }
-
-    public void setAux(int aux) {
-        this.aux = aux;
-    }
-
-    public int[] getNumeeros() {
-        return numeeros;
-    }
-
-    public void setNumeeros(int[] numeeros) {
-        this.numeeros = numeeros;
-    }
-
-    public void ingresardatos(){
+    public int[] getNumeros(){
+        return numeros;
 
     }
-
-    public int generar(int semilla) {
-
-
-
-        String cuadrado = Integer.toString((int)Math.pow(semilla,2));
-        do {
-            int ceros = 8 - cuadrado.length();
-            for (int i = 0; i <= ceros; i++) {
-                cuadrado = "0" + cuadrado;
-
-            }
-        } while (cuadrado.length() < 8);
-        this.semilla = Integer.parseInt(cuadrado.substring(5, 7));
-
-        return this.semilla;
-    }
-
 }
