@@ -73,9 +73,7 @@ public class Generador {
             }
         }
         mostrarNumeros();
-        Archivos archivos = new Archivos();
-        archivos.setNumeros(numeros);
-        archivos.guardar();
+        guardarNumeros();
         System.out.println("------------------------------------\n" +
                     "1 Regresar al menu\n" +
                     "Otro Salir" +
@@ -85,6 +83,35 @@ public class Generador {
             bandera1 = true;
         }while (!bandera1);
     }
+    private void guardarNumeros(){
+        Archivos archivos = new Archivos();
+        archivos.setNumeros(numeros);
+        switch (opcion){
+            case 0: {
+                archivos.setNombre("automatico");
+            }break;
+            case 1: {
+                archivos.setNombre("cuadradosCentrales");
+            }break;
+            case 2: {
+                archivos.setNombre("factorConstante");
+            }break;
+            case 3: {
+                archivos.setNombre("productoCentral");
+            }break;
+            case 4: {
+                archivos.setNombre("Aditivo");
+            }break;
+            case 5: {
+                archivos.setNombre("mixto");
+            }break;
+            case 6: {
+                archivos.setNombre("multiplicativo");
+            }break;
+        }
+        archivos.guardar();
+    }
+
     private void mostrarNumeros(){
         for(int i = 0; i < numeros.length; i++){
             System.out.println(numeros[i]);
