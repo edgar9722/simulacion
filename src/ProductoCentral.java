@@ -25,14 +25,14 @@ public class ProductoCentral {
         Scanner reader = new Scanner(System.in);
         String cont = "0";
 
-        System.out.println("Ingresa las semilla1: ");
+        System.out.println("Ingresa las semilla 1: ");
         Semilla1 = reader.nextInt();
-        System.out.println("Ingresa las semilla2: ");
+        System.out.println("Ingresa las semilla 2: ");
         Semilla2 = reader.nextInt();
         X0=Semilla1;
         X1=Semilla2;
 
-        for(int i = 0; i <= cant_numeros; i++){
+        for(int i = 0; i < cant_numeros; i++){
             aux = X0 * X1;
             String num = Integer.toString(aux);
             if(num.length()==8){

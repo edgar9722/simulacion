@@ -9,20 +9,12 @@ public class Multiplicativo {
     Scanner s = new Scanner(System.in);
     int[] numeros;
 
-    public Multiplicativo(int semilla, int a, int x, int modulo, int[] numeros) {
-        this.semilla = semilla;
-        this.a = a;
-        this.x = x;
-        this.modulo = modulo;
-        this.numeros = numeros;
-    }
+
 
     public Multiplicativo(int cantidadNumeros) {
         this.cantidadNumeros = cantidadNumeros;
     }
     public void pedirDatos() {
-
-
         System.out.println("Ingrese Constante Multiplicativa");
         a = s.nextInt();
         System.out.println("Ingrese modulo "+"debe ser potencia de 2");
@@ -50,4 +42,3 @@ public class Multiplicativo {
     }
 }
 
-}

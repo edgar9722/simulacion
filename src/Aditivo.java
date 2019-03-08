@@ -48,7 +48,6 @@ public class Aditivo {
 
         for (int i = contador; i < cantidadNumeros; i++){
             aux = (numeros[contadorIzq]+numeros[contadorDer])%modulo;
-            System.out.println(aux);
             numeros[i] = aux;
             contadorIzq++;
             contadorDer++;

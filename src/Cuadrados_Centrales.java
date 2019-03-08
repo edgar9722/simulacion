@@ -23,7 +23,7 @@ public class Cuadrados_Centrales {
             String cuadrado = Integer.toString((int) Math.pow(x, 2));
             do {
                 int ceros = 8 - cuadrado.length();
-                for (int j = 0; j <= ceros; j++) {
+                for (int j = 0; j < ceros; j++) {
                     cuadrado = "0" + cuadrado;
                 }
             } while (cuadrado.length() < 8);
