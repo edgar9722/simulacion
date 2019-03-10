@@ -21,7 +21,7 @@ public class Automatico {
             while (aux.length() != 8){
                 aux = 0+aux;
             }
-            x = Integer.parseInt(aux.substring(2,6));
+            x = Integer.parseIrnt(aux.substring(2,6));
             numeros[i] = x;
         }
     }
