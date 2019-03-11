@@ -101,7 +101,7 @@ public class Generador {
                 archivos.setNombre("automatico");
             }break;
             case 1: {
-                archivos.setNombre("cuadradosCentrales");
+                archivos.setNombre("cuadrados_centrales");
             }break;
             case 2: {
                 archivos.setNombre("factorConstante");

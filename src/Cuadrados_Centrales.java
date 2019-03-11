@@ -21,7 +21,8 @@ public class Cuadrados_Centrales {
                 semilla = t.nextInt();
                 break;
             case 2:
-                boolean primo = false;
+              semilla = 9239;
+             /*   boolean primo = false;
                 int numero;
                 do {
                     numero = (int) (Math.random() * 9999 + 1);
@@ -40,7 +41,7 @@ public class Cuadrados_Centrales {
 
 
                 break;
-
+*/
 
         }
     }
