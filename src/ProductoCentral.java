@@ -29,7 +29,7 @@ public class ProductoCentral {
 
         if (opcion==0){
                 //Semillas aleatorias
-                Semilla1 = 4799;
+                Semilla1 = 479;
                 Semilla2 = 5863;
                 X0=Semilla1;
                 X1=Semilla2;
