@@ -22,7 +22,7 @@ public class Generador {
                 "5 Mixto: \n" +
                 "6 Multiplicativo: \n" +
                 "-> ");
-        opcion = t.ne    xtInt();
+        opcion = t.nextInt();
         System.out.println("¿Cuantos numeros pseudoaleatorios quiere generar? ");
         cant_numeros = t.nextInt();
         llamarFuncion();
@@ -70,6 +70,7 @@ public class Generador {
                 Multiplicativo multiplicativo = new Multiplicativo(cant_numeros);
                 multiplicativo.pedirDatos();
                 multiplicativo.generarNumeros();
+                multiplicativo.getNumeros();
             }break;
             default:{
                 System.out.println("Opcion no valida");

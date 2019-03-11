@@ -19,13 +19,18 @@ public class Multiplicativo {
         a = s.nextInt();
         System.out.println("Ingrese modulo "+"debe ser potencia de 2");
         modulo = s.nextInt();
-        System.out.println("Ingrese semilla");
-        semilla = s.nextInt();
 
-        if (modulo != modulo%2){
 
+        if ((modulo != 0) && ((modulo & (modulo - 1)) == 0)){
 
         }
+        else{
+            System.out.println(" El Modulo Debe ser una potencia de 2, Intente de nuevo");
+            modulo = s.nextInt();
+
+        }
+        System.out.println("Ingrese semilla");
+        semilla = s.nextInt();
 
 
     }
