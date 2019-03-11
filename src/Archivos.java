@@ -23,16 +23,16 @@ public class Archivos {
         // Cerrar el archivo
         arch.close();
     }
-    public void leerArchivo(String nombre, int cantidad)throws IOException{
-        int[] num = new int[cantidad];
-        //
+    public int[] leerArchivo(String nombre, int cantidad)throws IOException{
+        int[] num = new int[10];
+        System.out.println("--------");
         FileReader archivo = new FileReader(nombre);
         BufferedReader arch = new BufferedReader(archivo);
         for (int i = 0; i < cantidad; i++) {
-            num[i] = Integer.parseInt(arch.readLine());
-            System.out.println(num[i]);
+           num[i] = Integer.parseInt(arch.readLine());
         }
         arch.close();
+        return num;
     }
 
     public int[] getNumeros() {

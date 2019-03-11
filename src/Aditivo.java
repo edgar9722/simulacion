@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Aditivo {
@@ -7,10 +8,35 @@ public class Aditivo {
     private int cantidadNumeros;
     private int aux;
     private int contador = 1;
+    private int opcion;
     Scanner t = new Scanner (System.in);
 
     public Aditivo(int cantidadNumeros) {
         this.cantidadNumeros = cantidadNumeros;
+        semillas = new int[this.cantidadNumeros];
+        System.out.println("Elija una opcion para generar los valores iniciales:");
+        System.out.println("0 Automatica\n" +
+                "1 Manual\n");
+        opcion = t.nextInt();
+        if (opcion == 0) recuperarDatos();
+        else pedirDatos();
+        generarNumeros();
+    }
+    //Recupera los datos mediante un archivo guardado
+    public void recuperarDatos() {
+        Archivos archivos = new Archivos();
+        int[] datos = new int[10];
+        try {
+            datos = archivos.leerArchivo("V0Aditivo.dat",10);
+        }catch (IOException e){
+            System.out.println(e);
+        }
+        int i = 0;
+        while(datos[i]!=0){
+            semillas[i] = datos[i];
+            i++;
+        }
+        modulo = datos[i+1];
     }
 
     // Metodo para pedir los datos necesarios para generar los numeros
@@ -18,7 +44,7 @@ public class Aditivo {
         boolean terminar = false;
         int i = 1;
         int semilla;
-        semillas = new int[cantidadNumeros];
+
 
         System.out.println("Ingresa las semillas: ");
         System.out.println("Semilla "+i+": ");

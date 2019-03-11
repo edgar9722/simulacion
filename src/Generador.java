@@ -45,8 +45,6 @@ public class Generador {
             }break;
             case 2: {
                 Factores_Constantes factores_constantes = new Factores_Constantes(cant_numeros);
-                factores_constantes.pedirDatos();
-                factores_constantes.generarNumeros();
                 numeros = factores_constantes.getNumeros();
             }break;
             case 3: {
@@ -56,8 +54,6 @@ public class Generador {
             }break;
             case 4: {
                 Aditivo aditivo = new Aditivo(cant_numeros);
-                aditivo.pedirDatos();
-                aditivo.generarNumeros();
                 numeros = aditivo.getNumeros();
             }break;
             case 5: {
