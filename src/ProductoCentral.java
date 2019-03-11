@@ -29,8 +29,8 @@ public class ProductoCentral {
 
         if (opcion==0){
                 //Semillas aleatorias
-                Semilla1 = (int)(Math.random()*9999+1);
-                Semilla2 = (int)(Math.random()*9999+1);
+                Semilla1 = 4799;
+                Semilla2 = 5863;
                 X0=Semilla1;
                 X1=Semilla2;
 
