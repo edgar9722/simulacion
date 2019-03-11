@@ -5,7 +5,6 @@ public class Cuadrados_Centrales {
  int semilla ;
  int[] numeros;
  int cantidad;
- int numero = (int) (Math.random() * 9999 + 1);
 
     Scanner t = new Scanner (System.in);
 
@@ -13,34 +12,34 @@ public class Cuadrados_Centrales {
         this.cantidad = cantidad;
     }
 
-    public void pedirDatos() {
+    public void pedirDatos(){
         System.out.println("1) Ingresar la semilla \n 2) Generar semilla automaticamente");
         int opcion = t.nextInt();
-        switch (opcion) {
-            case 1:
-                System.out.println("ingrese la semilla");
-                semilla = t.nextInt();
-                break;
-            case 2:
-                boolean primo = false;
-                do {
+      switch (opcion){
+          case 1:
+              System.out.println("ingrese la semilla");
+              semilla = t.nextInt();
+              break;
+          case 2:
+              boolean primo = false;
+              do {
+              int numero = (int) (Math.random() * 9999 + 1);
 
 
+                  for(int i = 2; i < numero ; i++) {
+                      if (numero % i == 0)
+                          primo = false;
+                          break;
 
-                    for (int i = 2; i < numero; i++) {
-                        if (numero % i == 0)
-                            primo = false;
-                        break;
+                  }
 
-                    }
-
-                } while (primo = false);
-                semilla = numero;
-
-                break;
+                 } while (primo = false);
+              semilla = numero;
 
 
-        }
+              break;
+
+
     }
 
     public void  calcular() {

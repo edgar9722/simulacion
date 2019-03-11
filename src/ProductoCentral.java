@@ -7,54 +7,98 @@ public class ProductoCentral {
     int X0;
     int X1;
     int [] numeros;
-
-    public ProductoCentral(int semilla1, int semilla2, int aux, int x0, int x1, int[] numeros) {
-        Semilla1 = semilla1;
-        Semilla2 = semilla2;
-        this.aux = aux;
-        X0 = x0;
-        X1 = x1;
-        this.numeros = numeros;
-    }
+    int opcion;
 
     public ProductoCentral() {
     }
 
+    public void Opciones(){
+
+    }
     public void Calcular(int cant_numeros){
+        Scanner r = new Scanner(System.in);
+        System.out.println("Elija una opcion para generar la semilla:");
+        System.out.println("0 Automatica\n" +
+                "1 Ingresar\n");
+        opcion=r.nextInt();
+        //Recivir la cantidad de numeros a generarse en el metodo, los cuales se guardaran en un arreglo de dicho tamaño
         numeros = new int[cant_numeros];
         Scanner reader = new Scanner(System.in);
+        //Añadir ceros
         String cont = "0";
 
-        System.out.println("Ingresa las semilla 1: ");
-        Semilla1 = reader.nextInt();
-        System.out.println("Ingresa las semilla 2: ");
-        Semilla2 = reader.nextInt();
-        X0=Semilla1;
-        X1=Semilla2;
+        if (opcion==0){
+                //Semillas aleatorias
+                Semilla1 = (int)(Math.random()*9999+1);
+                Semilla2 = (int)(Math.random()*9999+1);
+                X0=Semilla1;
+                X1=Semilla2;
 
-        for(int i = 0; i < cant_numeros; i++){
-            aux = X0 * X1;
-            String num = Integer.toString(aux);
-            if(num.length()==8){
-                String subnum = num.substring(2,6);
-                num = subnum;
-                Integer n = Integer.parseInt(num);
-                X0=X1;
-                X1=n;
-                System.out.println(num);
-                numeros[i]=n;
-            }
-            else{
-                while(num.length()<8){
-                    num = cont + num;
+                for(int i = 0; i < cant_numeros; i++){
+                    aux = X0 * X1;
+                    String num = Integer.toString(aux);
+                    if(num.length()==8){
+                        String subnum = num.substring(2,6);
+                        num = subnum;
+                        Integer n = Integer.parseInt(num);
+                        X0=X1;
+                        X1=n;
+                        System.out.println(num);
+                        numeros[i]=n;
+                    }
+                    else{
+                        while(num.length()<8){
+                            num = cont + num;
+                        }
+                        String subnum = num.substring(2,6);
+                        num = subnum;
+                        Integer n = Integer.parseInt(num);
+                        X0=X1;
+                        X1=n;
+                        System.out.println(num);
+                        numeros[i]=n;
+                    }
+
                 }
-                String subnum = num.substring(2,6);
-                num = subnum;
-                Integer n = Integer.parseInt(num);
-                X0=X1;
-                X1=n;
-                System.out.println(num);
-                numeros[i]=n;
+            }
+            else{if(opcion==1){
+
+                //Pedir las semillas que son necesarias
+                System.out.println("Ingresa las semilla 1: ");
+                Semilla1 = reader.nextInt();
+                System.out.println("Ingresa las semilla 2: ");
+                Semilla2 = reader.nextInt();
+                X0=Semilla1;
+                X1=Semilla2;
+
+                //Generador de numeros pseudoaleatorios
+                for(int i = 0; i < cant_numeros; i++){
+                    aux = X0 * X1;
+                    String num = Integer.toString(aux);
+                    if(num.length()==8){
+                        String subnum = num.substring(2,6);
+                        num = subnum;
+                        Integer n = Integer.parseInt(num);
+                        X0=X1;
+                        X1=n;
+                        System.out.println(num);
+                        numeros[i]=n;
+                    }
+                    else{
+                        //Añadir los ceros necesarios para realizar un número de 8 digitos
+                        while(num.length()<8){
+                            num = cont + num;
+                        }
+                        String subnum = num.substring(2,6);
+                        num = subnum;
+                        Integer n = Integer.parseInt(num);
+                        X0=X1;
+                        X1=n;
+                        System.out.println(num);
+                        numeros[i]=n;
+                    }
+
+                }
             }
 
         }
