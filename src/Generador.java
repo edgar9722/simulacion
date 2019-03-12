@@ -130,13 +130,14 @@ public class Generador {
         System.out.println("Periodo de repiticion minimo: ");
         int periodo = t.nextInt();
         boolean r = false;
-        int p;
+        int p=0;
         int j;
         for(int i = 0; i < numeros.length; i++){
             j = i+1;
             while (j < numeros.length){
                 if(i != j && numeros[i] == numeros[j]){
                     p = j - i;
+                    System.out.println(numeros[i]+" Se repite en la posicion "+i+" y "+j+" periodo "+p);
                     if(p < periodo) r = true;
                 }
                 j++;

@@ -11,10 +11,6 @@ public class ProductoCentral {
 
     public ProductoCentral() {
     }
-
-    public void Opciones(){
-
-    }
     public void Calcular(int cant_numeros){
         Scanner r = new Scanner(System.in);
         System.out.println("Elija una opcion para generar la semilla:");
@@ -43,7 +39,7 @@ public class ProductoCentral {
                         Integer n = Integer.parseInt(num);
                         X0=X1;
                         X1=n;
-                        System.out.println(num);
+                        //System.out.println(num);
                         numeros[i]=n;
                     }
                     else{
@@ -55,7 +51,7 @@ public class ProductoCentral {
                         Integer n = Integer.parseInt(num);
                         X0=X1;
                         X1=n;
-                        System.out.println(num);
+                        //System.out.println(num);
                         numeros[i]=n;
                     }
 
