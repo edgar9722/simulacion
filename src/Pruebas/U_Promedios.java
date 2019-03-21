@@ -22,15 +22,15 @@ public class U_Promedios {
         media=suma/numeros.length;
        //calcular z
         z = ((media - 0.5)*Math.pow(numeros.length,0.5))/Math.pow(1/12,1/2);
-        if(z < 1.96 || z > -1.96  ){
+        if(z < 1.96 && z > -1.962  ){
             validacion = true;
         }
     }
     private void imprimir (){
         if (validacion )
-            System.out.println("Z "+z+" es menor a 1.96 , se acepta la hiposis de que la muestra viene de una distribucion uniforme");
+            System.out.println(" -1.96 < "+z+" < 1.96, se acepta la hiposis de que la muestra viene de una distribucion uniforme");
         else
-            System.out.println("Z "+z+" es mayor a 1.96 , no se acepta la hipotesis");
+            System.out.println("-1.96 < "+z+" < 1.96 , no se acepta la hipotesis");
     }
 
 }

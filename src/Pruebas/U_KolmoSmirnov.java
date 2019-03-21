@@ -2,20 +2,22 @@ package Pruebas;
 
 public class U_KolmoSmirnov {
     int[] numeros;
-    int[] orden = Ascendente(numeros);
+    int[] orden;
     double X;
     int i;
     double Dm;
     double DM;
-    double N=numeros.length;
+    double N;
     double Max;
     double Max2;
     double DMayor;
-    double d=1.36/N;
+    double d;
     //System.out.println("Ascendente"+Arrays.toString(orden));
 
     public U_KolmoSmirnov(int [] numeros){
         this.numeros = numeros;
+        N=numeros.length;
+        d=1.36/N;
         Calcular();
 
     }
