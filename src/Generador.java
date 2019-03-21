@@ -1,3 +1,8 @@
+import Pruebas.I_Poker;
+import Pruebas.U_ChiCuadrada;
+import Pruebas.U_KolmoSmirnov;
+import Pruebas.U_Promedios;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -79,6 +84,7 @@ public class Generador {
             System.out.println("------------------------------------");
             System.out.println("Cumple con el periodo de repetición");
             mostrarNumeros();
+            pruebas();
             guardarNumeros();
             System.out.println("Numeros guardados...");
         }
@@ -144,6 +150,22 @@ public class Generador {
             }
         }
         return r;
+    }
+    private void pruebas(){
+        System.out.println("PRUEBAS DE UNIFORMIDAD \n");
+        System.out.println("PRUEBA PROMEDIOS \n");
+        U_Promedios promedios = new U_Promedios(numeros);
+        System.out.println("PRUEBA Chi Cuadrada \n");
+        U_ChiCuadrada chi2 = new U_ChiCuadrada(numeros);
+        System.out.println("PRUEBA KolmoSmirnov \n");
+        U_KolmoSmirnov kolmoSmirnov = new U_KolmoSmirnov(numeros);
+        System.out.println("PRUEBAS DE INDEPENDENCIA \n");
+        System.out.println("PRUEBA POKER \n");
+        I_Poker poker = new I_Poker(numeros);
+
+
+
+
     }
     private void mostrarNumeros(){
         System.out.println("----------Numeros generados");
