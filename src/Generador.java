@@ -1,3 +1,6 @@
+import Pruebas.U_ChiCuadrada;
+import Pruebas.U_Promedios;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -79,6 +82,7 @@ public class Generador {
             System.out.println("------------------------------------");
             System.out.println("Cumple con el periodo de repetición");
             mostrarNumeros();
+            pruebas();
             guardarNumeros();
             System.out.println("Numeros guardados...");
         }
@@ -144,6 +148,11 @@ public class Generador {
             }
         }
         return r;
+    }
+    private void pruebas(){
+        U_Promedios promedios = new U_Promedios();
+        U_ChiCuadrada chi2 = new U_ChiCuadrada(numeros);
+
     }
     private void mostrarNumeros(){
         System.out.println("----------Numeros generados");

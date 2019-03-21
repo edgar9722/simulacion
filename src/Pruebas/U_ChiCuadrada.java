@@ -1,17 +1,22 @@
 package Pruebas;
 
 public class U_ChiCuadrada {
-    int[] numeros;
+    double [] numeros;
+    int[] nums;
     int fEsperada = 0 ;
     double x2;
-    double x2Critico;
+    double x2Critico = .711;
     int intervalos = 5;
     Rango[] rango;
     boolean validacion = false;
 
-    public U_ChiCuadrada(int[] numeros, int fEsperada) {
-        this.numeros = numeros;
-        this.fEsperada = fEsperada;
+    public U_ChiCuadrada(int[] nums) {
+        this.nums = nums;
+        numeros = new double[nums.length];
+
+        for (int i = 0; i < nums.length ; i++) {
+            numeros[i] = (double)this.nums[i] / 10000 ;
+        }
         intervalos();
         Calculos();
         imprimir();
@@ -61,7 +66,7 @@ public class U_ChiCuadrada {
             }
         }
 
-        // calcular z
+        // calcular x2
         for(int i=0; i< rango.length; i++)
         {
             Rango ran = rango[i];
@@ -91,7 +96,7 @@ public class U_ChiCuadrada {
         System.out.println("\n X2 = " + x2);
 
         if (validacion)
-            System.out.println("se acepta la hiposis de que la muestra viene de una distribucion uniforme");
+            System.out.println("se acepta la hipotesis de que la muestra viene de una distribucion uniforme");
         else
             System.out.println( "no se acepta la hipotesis");
     }
