@@ -14,7 +14,7 @@ public class U_KolmoSmirnov {
     double d=1.36/N;
     //System.out.println("Ascendente"+Arrays.toString(orden));
 
-    public void U_KolmoSmirnov(int [] numeros){
+    public U_KolmoSmirnov(int [] numeros){
         this.numeros = numeros;
         Calcular();
 
