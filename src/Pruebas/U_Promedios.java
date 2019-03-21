@@ -22,7 +22,7 @@ public class U_Promedios {
         media=suma/numeros.length;
        //calcular z
         z = ((media - 0.5)*Math.pow(numeros.length,0.5))/Math.pow(1/12,1/2);
-        if(z < 1.96){
+        if(z < 1.96 || z > -1.96  ){
             validacion = true;
         }
     }
