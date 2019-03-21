@@ -21,8 +21,8 @@ public class U_Promedios {
           suma=suma+numeros[i];
         media=suma/numeros.length;
        //calcular z
-        z = ((media - 0.5)*Math.pow(numeros.length,0.5))/Math.pow(1/12,1/2);
-        if(z < 1.96 && z > -1.962  ){
+        z = Math.abs(((media - 0.5)*Math.pow(numeros.length,0.5))/Math.pow(1/12,1/2));
+        if( z > -1.962 ){
             validacion = true;
         }
     }
