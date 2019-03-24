@@ -1,7 +1,4 @@
-import Pruebas.I_Poker;
-import Pruebas.U_ChiCuadrada;
-import Pruebas.U_KolmoSmirnov;
-import Pruebas.U_Promedios;
+import Pruebas.*;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -162,7 +159,8 @@ public class Generador {
         System.out.println("PRUEBAS DE INDEPENDENCIA \n");
         System.out.println("PRUEBA POKER \n");
         I_Poker poker = new I_Poker(numeros);
-
+        System.out.println("PRUEBAS AUTOCORRELACION");
+        I_Autocorrelacion i_autocorrelacion = new I_Autocorrelacion(numeros);
 
 
 
