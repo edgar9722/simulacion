@@ -165,6 +165,8 @@ public class Generador {
         System.out.println("PRUEBAS DE INDEPENDENCIA \n");
         System.out.println("PRUEBA POKER \n");
         I_Poker poker = new I_Poker(numeros);
+        System.out.println("---- PRUEBA HUECOS \n");
+        I_Huecos huecos = new I_Huecos(numeros);
         System.out.println("PRUEBAS AUTOCORRELACION");
         I_Autocorrelacion i_autocorrelacion = new I_Autocorrelacion(numeros);
 
