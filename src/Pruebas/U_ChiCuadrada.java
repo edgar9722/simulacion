@@ -9,9 +9,17 @@ public class U_ChiCuadrada {
     int intervalos = 5;
     Rango[] rango;
     boolean validacion = false;
+    Tablas tablas = new Tablas();
+    int  clases, gradosL;
+    double nivelS;
 
-    public U_ChiCuadrada(int[] nums) {
+    public U_ChiCuadrada(int[] nums, double nivelS,int clases) {
         this.nums = nums;
+        this.nivelS = nivelS;
+        this.clases = clases;
+        tablas.escribirChi();
+        gradosL = clases -1 ;
+        x2Critico = tablas.ObtenerChi(this.nivelS,gradosL);
         numeros = new double[nums.length];
 
         for (int i = 0; i < nums.length ; i++) {
@@ -94,6 +102,7 @@ public class U_ChiCuadrada {
         }
 
         System.out.println("\n X2 = " + x2);
+        System.out.println("\n Valor critico: " + x2Critico);
 
         if (validacion)
             System.out.println("se acepta la hipotesis de que la muestra viene de una distribucion uniforme");

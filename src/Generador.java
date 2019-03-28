@@ -8,7 +8,8 @@ public class Generador {
     int opcion;
     int cant_numeros;
     int[] numeros;
-
+    double nivelS = 0.0;
+    int clases=0;
     public Generador() {
         menu();
     }
@@ -153,7 +154,12 @@ public class Generador {
         System.out.println("PRUEBA PROMEDIOS \n");
         U_Promedios promedios = new U_Promedios(numeros);
         System.out.println("PRUEBA Chi Cuadrada \n");
-        U_ChiCuadrada chi2 = new U_ChiCuadrada(numeros);
+        System.out.println("Ingrese el valor de nivel de significancia  (se recomienda 0.05)");
+        nivelS = t.nextDouble();
+        System.out.println("Ingrese el valor de clases   (se recomienda 5)");
+        clases = t.nextInt();
+
+        U_ChiCuadrada chi2 = new U_ChiCuadrada(numeros,nivelS,clases);
         System.out.println("PRUEBA KolmoSmirnov \n");
         U_KolmoSmirnov kolmoSmirnov = new U_KolmoSmirnov(numeros);
         System.out.println("PRUEBAS DE INDEPENDENCIA \n");
