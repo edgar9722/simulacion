@@ -44,15 +44,15 @@ public class Tablas {
                 {0.9981, 0.9982, 0.9982, 0.9983, 0.9984, 0.9984, 0.9985, 0.9985, 0.9986, 0.9986},
                 {0.9987, 0.9990, 0.9993, 0.9995, 0.9997, 0.9998, 0.9998, 0.9999, 0.9999, 1.0000}
         };
-        this.crear(z, "Estadistico z");
+        this.crearArchivo(z, "Estadistico z");
     }
 
-    public void escribirChi(){
+    public void tablaChiCuadrada(){
         double chi[][] = {
                 {10.8274, 9.1404,  7.8794,  6.6349,  5.0239,  3.8415,  2.7055,  2.0722,  1.6424,  1.3233,  1.0742,  0.8735,  0.7083,  0.5707,  0.4549},
                 {13.8150, 11.9827, 10.5965, 9.2104,  7.3778,  5.9915,  4.6052,  3.7942,  3.2189,  2.7726,  2.4079,  2.0996,  1.8326,  1.5970,  1.3863},
                 {16.2660, 14.3202, 12.8381, 11.3449, 9.3484,  7.8147,  6.2514,  5.3170,  4.6416,  4.1083,  3.6649,  3.2831,  2.9462,  2.6430,  2.3660},
-                {18.4662, 16.4238, 14.8602, 13.2767, 11.1433, 9.4877,  7.7794,  6.7449,  5.9886,  5.3853,  4.8784,  4.4377,  4.0446,  3.6871,  3.3567},
+                {18.4662, 16.4238, 14.8602, 13.2767, 11.1433, 0.711,  7.7794,  6.7449,  5.9886,  5.3853,  4.8784,  4.4377,  4.0446,  3.6871,  3.3567},
                 {20.5147, 18.3854, 16.7496, 15.0863, 12.8325, 11.0705, 9.2363,  8.1152,  7.2893,  6.6257,  6.0644,  5.5731,  5.1319,  4.7278,  4.3515},
                 {22.4575, 20.2491, 18.5475, 16.8119, 14.4494, 12.5916, 10.6446, 9.4461,  8.5581,  7.8408,  7.2311,  6.6948,  6.2108,  5.7652,  5.3481},
                 {24.3213, 22.0402, 20.2777, 18.4753, 16.0128, 14.0671, 12.0170, 10.7479, 9.8032,  9.0371,  8.3834,  7.8061,  7.2832,  6.8000,  6.3458},
@@ -79,7 +79,7 @@ public class Tablas {
                 {56.8918, 53.5939, 50.9936, 48.2782, 44.4608, 41.3372, 37.9159, 35.7150, 34.0266, 32.6205, 31.3909, 30.2791, 29.2486, 28.2740, 27.3362},
                 {58.3006, 54.9662, 52.3355, 49.5878, 45.7223, 42.5569, 39.0875, 36.8538, 35.1394, 33.7109, 32.4612, 31.3308, 30.2825, 29.2908, 28.3361}
         };
-        this.crear(chi, "Chi-Cuadrada");
+        this.crearArchivo(chi, "Chi-Cuadrada");
     }
 
     public void escribirD(int cantidad_numeros){
@@ -97,12 +97,12 @@ public class Tablas {
             d[k + 1] = (1.36 / Math.sqrt(k));
             index[k + 1] = d[k + 1];
         }
-        this.crear(d, "Estadistico D");
+        this.crearArchivo(d, "Estadistico D");
     }
 
-    public double ObtenerChi(double alfa, int grados) {
+    public double ObtenerValorCritico(double alfa, int grados, String nombreArchivo) {
         Archivo a=new Archivo();
-        double chi [][]=a.LeerChi("Chi-Cuadrada");
+        double chi [][]=a.LeerChi(nombreArchivo);
         i();
         int posx = 0, posy = 0;
 
@@ -129,7 +129,7 @@ public class Tablas {
         }
     }
 
-    public void crear(double [][]tabla, String nombre_archivo){
+    public void crearArchivo(double [][]tabla, String nombre_archivo){
         File file = new File(nombre_archivo);
         try {
             FileOutputStream Fi_Out = new FileOutputStream (file,true);
@@ -147,7 +147,7 @@ public class Tablas {
         }
     }
 
-    public void crear(double []tabla, String nombre_archivo){
+    public void crearArchivo(double []tabla, String nombre_archivo){
         File file = new File(nombre_archivo);
         try {
             FileOutputStream Fi_Out = new FileOutputStream (file,true);

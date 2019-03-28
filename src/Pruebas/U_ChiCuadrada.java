@@ -17,9 +17,9 @@ public class U_ChiCuadrada {
         this.nums = nums;
         this.nivelS = nivelS;
         this.clases = clases;
-        tablas.escribirChi();
+        tablas.tablaChiCuadrada();
         gradosL = clases -1 ;
-        x2Critico = tablas.ObtenerChi(this.nivelS,gradosL);
+        x2Critico = tablas.ObtenerValorCritico(this.nivelS,gradosL,"Chi-Cuadrada");
         numeros = new double[nums.length];
 
         for (int i = 0; i < nums.length ; i++) {
